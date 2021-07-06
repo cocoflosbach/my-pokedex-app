@@ -42,3 +42,11 @@ let pokemonList = [
     types: ["fairy","normal",]
   }
 ];
+
+for (let i = 0; i < pokemonList.length; i++) {
+  document.write(pokemonList[i].name 
+                 + " Height: " + pokemonList[i].height 
+                 + " Weight: " + pokemonList[i].weight 
+                 + " Abilities: " + pokemonList[i].abilities 
+                 + " Types: " + pokemonList[i].types  )
+}
