@@ -49,4 +49,8 @@ for (let i = 0; i < pokemonList.length; i++) {
                  + ", Weight: " + pokemonList[i].weight 
                  + ",  Abilities: " + pokemonList[i].abilities 
                  + ", Types: " + pokemonList[i].types + "<p>")
+  
+  if (pokemonList[i].height > 1.5) {
+    document.write("This Pokemon is a Big one!")
+  }
 }
