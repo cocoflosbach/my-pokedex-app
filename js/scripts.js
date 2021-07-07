@@ -51,6 +51,6 @@ for (let i = 0; i < pokemonList.length; i++) {
                  + ", Types: " + pokemonList[i].types + "<p>")
   
   if (pokemonList[i].height > 1.5) {
-    document.write("This Pokemon is a Big one!")
+    document.write("Wow, that's big!")
   }
 }
