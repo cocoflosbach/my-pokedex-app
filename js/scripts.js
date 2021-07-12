@@ -57,6 +57,16 @@ let pokemonRepository = (function (){
   };
 })();
 
+pokemonRepository.add(
+  { 
+    name: "Wigglytuff", 
+    height: 1, 
+    weight: 12, 
+    abilities: ["cute-charm","frisk"], 
+    types: ["fairy","normal",]
+  }
+);
+console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function(pokemon) {
   document.write( "<p>" + pokemon.name 
