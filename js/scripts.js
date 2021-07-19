@@ -49,6 +49,13 @@ let pokemonRepository = (function (){
       console.log('Incorrect entry.');
     }
 
+  }
+
+  //Create showDetails function
+  function showDetails(pokemon) {
+    console.log(pokemon)
+  }
+
 
   // Create addListItem function
   function addListItem(pokemon) {
