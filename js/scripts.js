@@ -1,42 +1,7 @@
 let pokemonRepository = (function (){
-  let pokemonList = [
-    {
-      name: "Bulbasaur",
-      height: 0.7,
-      weight: 6.9,
-      abilities: ["clorophyll","overgrow"],
-      types: ["grass","poison",]
-    },
-    {
-      name: "Charizard",
-      height: 1.7,
-      weight: 90.5,
-      abilities: ["blaze","solar-power"],
-      types: ["fire","flying",]
-    },
-    {
-      name: "Butterfree",
-      height: 1.1,
-      weight: 32,
-      abilities: ["compoundeyes","tinted-lens"],
-      types: ["bug","flying",]
-    },
-    {
-      name: "Beedrill",
-      height: 1,
-      weight: 29.5,
-      abilities: ["swarm","sniper"],
-      types: ["bug","poison",]
-    },
-    {
-      name: "Pidgeotto",
-      height: 1.1,
-      weight: 30,
-      abilities: ["keen-eye","tangled-feet","big-pecks"],
-      types: ["flying","normal",]
-    },
+  let pokemonList = [];
 
-  ];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   function getAll() {
     return pokemonList;
