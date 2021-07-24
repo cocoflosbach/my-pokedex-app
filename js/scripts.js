@@ -8,7 +8,7 @@ let pokemonRepository = (function (){
   }
 
   function add(pokemon) {
-    if (typeof pokemon === 'object' && 'name' in pokemon) {
+    if (typeof pokemon === 'object' && 'name' in pokemon && 'detailsUrl' in pokemon) {
       pokemonList.push(pokemon);
     } else {
       console.log('Incorrect entry.');
@@ -88,20 +88,12 @@ let pokemonRepository = (function (){
   };
 })();
 
-pokemonRepository.add(
-  {
-    name: "Wigglytuff",
-    height: 1,
-    weight: 12,
-    abilities: ["cute-charm","frisk"],
-    types: ["fairy","normal",]
-  }
-);
-console.log(pokemonRepository.getAll());
-
-pokemonRepository.getAll().forEach(function (pokemon) {
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function (pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
+
   /*document.write( "<p>" + pokemon.name
                  + "<br>" + " Height: " + pokemon.height
                  + ", Weight: " + pokemon.weight
