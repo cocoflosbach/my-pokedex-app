@@ -52,3 +52,13 @@ ul {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
+@media screen and (min-width: 1440px) {
+  .pokemon-list {
+    max-width: 500px;
+  }
+}
+
+.pokemon-list {
+  padding: 20px;
+}
