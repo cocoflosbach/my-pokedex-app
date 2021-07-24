@@ -18,7 +18,9 @@ let pokemonRepository = (function (){
 
   //Create showDetails function
   function showDetails(pokemon) {
-    console.log(pokemon)
+    loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
   }
 
 
