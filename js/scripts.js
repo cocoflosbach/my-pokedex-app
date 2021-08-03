@@ -89,7 +89,6 @@ let pokemonRepository = (function (){
   //Create showDetails function
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
-      console.log(pokemon);
       showModal(pokemon);
     });
   }
@@ -124,7 +123,7 @@ let pokemonRepository = (function (){
     }).then(function (json) {
       json.results.forEach(function (item) {
         let pokemon = {
-          name: item.name,
+          name: item.name.toUpperCase(),
           detailsUrl: item.url
         };
         add(pokemon);
@@ -164,26 +163,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-  /*document.write( "<p>" + pokemon.name
-                 + "<br>" + " Height: " + pokemon.height
-                 + ", Weight: " + pokemon.weight
-                 + ",  Abilities: " + pokemon.abilities
-                 + ", Types: " + pokemon.types + "<p>")
-
-  if (pokemon.height > 1.5) {
-    document.write("Wow, that's big!!")
-  }*/
-
-
- /*for (let i = 0; i < pokemonList.length; i++) {
-  document.write( "<p>" + pokemonList[i].name
-                 + "<br>" + " Height: " + pokemonList[i].height
-                 + ", Weight: " + pokemonList[i].weight
-                 + ",  Abilities: " + pokemonList[i].abilities
-                 + ", Types: " + pokemonList[i].types + "<p>")
-
-  if (pokemonList[i].height > 1.5) {
-    document.write("Wow, that's big!")
-  }
-} */
