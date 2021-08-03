@@ -1,4 +1,8 @@
 let pokemonRepository = (function (){
+   // define modal variable
+  let modalContainer = document.querySelector('#modal-container');
+  let modal = document.querySelector('.modal');
+  let modalClose = document.querySelector('.modal-close');
   let pokemonList = [];
 
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
