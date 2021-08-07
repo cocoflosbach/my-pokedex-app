@@ -49,11 +49,16 @@ let pokemonRepository = (function (){
     let pokemonList = document.querySelector('.pokemon-list');
 
     let listItem = document.createElement('li');
+    listItem.classList.add('group-list-item')
 
     let button = document.createElement('button');
     button.innerText = pokemon.name;
 
-    button.classList.add('button-class');
+    button.classList.add('button-class', 'btn', 'btn-primary');
+    //Include Data target
+    button.setAttribute('data-target', '#modal-container');
+    /* button.setAttribute('data-toggle', 'modal') ;*/
+
     // Add event listener to button
     button.addEventListener('click', function(showDetails) {
       console.log(pokemon);
