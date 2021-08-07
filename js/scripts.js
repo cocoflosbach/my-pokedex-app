@@ -31,6 +31,9 @@ let pokemonRepository = (function (){
 
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+  let searchInput = document.querySelector('search-bar');
+  let searchButton = document.querySelector('search-button');
+
   function add(pokemon) {
     if (typeof pokemon === 'object' && 'name' in pokemon && 'detailsUrl' in pokemon) {
       pokemonList.push(pokemon);
@@ -148,6 +151,25 @@ let pokemonRepository = (function (){
       console.error(e);
     });
   }
+
+  function searchPokemon () {
+    let searchInput = document.querySelector('search-bar');
+    let searchButton = document.querySelector('search-button');
+    let listItem = document.createElement('li');
+    listItem.classList.add('group-list-item')
+
+    listItem.forEach(function(pokemon) {
+      if (searchInput.value === pokemonName) {
+        showModal(pokemon);
+      } else {
+        alert('error');
+      }
+    });
+
+    searchButton.addEventListener('click', searchPokemon);
+  }
+
+
 
   return {
     getAll: getAll,
