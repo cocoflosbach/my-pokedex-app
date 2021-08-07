@@ -4,38 +4,28 @@ let pokemonRepository = (function (){
   let modalContainer = document.querySelector('#modal-container');
   let modal = document.querySelector('.modal');
   let modalClose = document.querySelector('.modal-close');
+
     // Create Modal content
-  let pokemonName = document.createElement('h1');
-  pokemonName.classList.add('pokemon-name');
+    let pokemonName = document.createElement('h1');
+    pokemonName.classList.add('pokemon-name');
 
+    let pokemonHeight = document.createElement('p');
+    pokemonHeight.classList.add('pokemon-height');
 
-  let pokemonHeight = document.createElement('p');
-  pokemonHeight.classList.add('pokemon-height');
+    let pokemonImg = document.createElement('img');
+    pokemonImg.classList.add('modal-img');
 
-  //let pokemonWeight = document.createElement('p');
-  //pokemonWeight.innerText = 'Weight: ' + pokemon.weight;
-  //pokemonWeight.classList.add('pokemon-weight');
+    let modalBody = $(".modal-body");
+    let modalTitle = $(".modal-title");
+    let modalHeader = $(".modal-header");
 
+    modalTitle.empty();
+    modalBody.empty();
 
-  //let pokemonTypes = document.createElement('p');
-  //pokemonTypes.innerText = 'Types: ' + pokemon.types;
-  //pokemonTypes.classList.add('pokemon-type');
+    modalTitle.append(pokemonName);
+    modalBody.append(pokemonImg);
+    modalBody.append(pokemonHeight);
 
-  //let pokemonAbilities = document.createElement('p');
-  //pokemonAbilities.innerText = 'Abilities: ' + pokemon.abilities;
-  //pokemonTypes.classList.add('pokemon-abilities');
-
-  let pokemonImg = document.createElement('img');
-  pokemonImg.classList.add('pokemon-img');
-
-
-
-  modal.appendChild(pokemonName);
-  modal.appendChild(pokemonHeight);
-  //modal.appendChild(pokemonWeight);
-  //modal.appendChild(pokemonTypes);
-  modal.appendChild(pokemonImg);
-  //modal.appendChild(pokemonAbilities);
 
   let pokemonList = [];
 
