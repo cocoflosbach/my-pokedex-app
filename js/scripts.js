@@ -4,6 +4,8 @@ let pokemonRepository = (function (){
   let modalContainer = document.querySelector('#modal-container');
   let modal = document.querySelector('.modal');
   let modalClose = document.querySelector('.modal-close');
+  let searchInput = document.querySelector('#search-bar');
+  //let searchButton = document.querySelector('.search-button')
 
     // Create Modal content
     let pokemonName = document.createElement('h1');
@@ -31,9 +33,6 @@ let pokemonRepository = (function (){
 
   // Link to pokemon API
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-
-  let searchInput = document.querySelector('search-bar');
-  let searchButton = document.querySelector('search-button');
 
   // Function conditional to add pokemon
   function add(pokemon) {
@@ -157,24 +156,21 @@ let pokemonRepository = (function (){
     });
   }
 
-  function searchPokemon () {
-    let searchInput = document.querySelector('search-bar');
-    let searchButton = document.querySelector('search-button');
-    let listItem = document.createElement('li');
-    listItem.classList.add('group-list-item')
+  searchInput.addEventListener('input', function() {
+    let listPokemonItem = document.querySelectorAll('li');
+    let value = searchInput.value.toUpperCase();
 
-    listItem.forEach(function(pokemon) {
-      if (searchInput.value === pokemonName) {
-        showModal(pokemon);
+
+    listPokemonItem.forEach(function(pokemon) {
+      if (pokemon.innerText.toUpperCase().indexOf(value) > -1) {
+        pokemon.style.display = 'block';
       } else {
-        alert('error');
+        pokemon.style.display = 'none';
       }
     });
+  });
 
-    searchButton.addEventListener('click', searchPokemon);
-  }
-
-
+  //searchButton.addEventListener('click', searchPokemon);
 
   return {
     getAll: getAll,
