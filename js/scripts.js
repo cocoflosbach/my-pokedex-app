@@ -14,8 +14,20 @@ let pokemonRepository = (function (){
     let pokemonHeight = document.createElement('p');
     pokemonHeight.classList.add('pokemon-height');
 
-    let pokemonImg = document.createElement('img');
-    pokemonImg.classList.add('modal-img');
+    let pokemonImgFront = document.createElement('img');
+    pokemonImgFront.classList.add('modal-img');
+
+    /*let pokemonImgBack = document.createElement('img');
+    pokemonImgBack.classList.add('modal-img');
+
+    let pokemonWeight = document.createElement('p');
+    pokemonWeight.classList.add('pokemon-weight');
+
+    let pokemonTypes = document.createElement('p');
+    pokemonTypes.classList.add('pokemon-types');
+
+    let pokemonAbilities = document.createElement('p');
+    pokemonTypes.classList.add('pokemon-Abilities');*/
 
     let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
@@ -25,8 +37,12 @@ let pokemonRepository = (function (){
     modalBody.empty();
 
     modalTitle.append(pokemonName);
-    modalBody.append(pokemonImg);
+    modalBody.append(pokemonImgFront);
+    //modalBody.append(pokemonImgBack);
     modalBody.append(pokemonHeight);
+    //modalBody.append(pokemonWeight);
+   // modalBody.append(pokemonTypes);
+    //modalBody.append(pokemonAbilities);
 
 
   let pokemonList = [];
@@ -61,7 +77,7 @@ let pokemonRepository = (function (){
     button.classList.add('button-class', 'btn', 'btn-primary');
     //Include Data target
     button.setAttribute('data-target', '#modal-container');
-    /* button.setAttribute('data-toggle', 'modal') ;*/
+    button.setAttribute('data-toggle', 'modal') ;
 
     // Add event listener to button
     button.addEventListener('click', function(showDetails) {
@@ -82,7 +98,15 @@ let pokemonRepository = (function (){
 
     pokemonHeight.innerText = 'Height: ' + pokemon.height;
 
-    pokemonImg.src = pokemon.imageUrl;
+    pokemonImgFront.src = pokemon.imageUrl;
+
+    /*pokemonImgBack.src = pokemon.imageUrlBack;
+
+    pokemonWeight.innerText = 'Weight: ' + pokemon.weight;
+
+    pokemonTypes.innerText = 'Types: ' + pokemon.types;
+
+    pokemonAbilities.innerText = 'Abilities: ' + pokemon.abilities;*/
 
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
@@ -151,6 +175,10 @@ let pokemonRepository = (function (){
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
       item.types = details.types;
+      pokemon.height = details.height;
+      pokemon.weight = details.weight;
+      pokemon.types = details.types;
+
     }).catch(function (e) {
       console.error(e);
     });
