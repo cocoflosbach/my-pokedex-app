@@ -1,0 +1,72 @@
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #FCBF49;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.app-name {
+  display: grid;
+  text-align: center;
+  color: #009FFD;
+}
+
+.button-class {
+  width: 100%;
+  border: none;
+  list-style-type: none;
+  font-family: inherit;
+  line-height: normal;
+  background-color: #FFA400;
+  color: #2A2A72;
+  font-size: 16px;
+  text-align: left;
+  display: inline-block;
+  text-decoration: none;
+  margin: 4px 2px;
+  padding: 16px 32px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+  .pokemon-list {
+    max-width: 500px;
+  }
+}
+
+.pokemon-list {
+  padding: 20px;
+}
+
+#modal-container {
+  display: none;
+}
+
+.modal h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.modal img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+}
+
+.page-container {
+margin-top: 20px;
+
+}
