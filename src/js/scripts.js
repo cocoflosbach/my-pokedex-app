@@ -12,23 +12,22 @@ let pokemonRepository = (function() {
   pokemonName.classList.add('pokemon-name');
 
   let pokemonHeight = document.createElement('p');
-
   pokemonHeight.classList.add('pokemon-height');
 
   let pokemonImgFront = document.createElement('img');
   pokemonImgFront.classList.add('modal-img');
 
-  /*let pokemonImgBack = document.createElement('img');
-    pokemonImgBack.classList.add('modal-img');
+  let pokemonImgBack = document.createElement('img');
+  pokemonImgBack.classList.add('modal-img');
 
-    let pokemonWeight = document.createElement('p');
-    pokemonWeight.classList.add('pokemon-weight');
+  let pokemonWeight = document.createElement('p');
+  pokemonWeight.classList.add('pokemon-weight');
 
-    let pokemonTypes = document.createElement('p');
-    pokemonTypes.classList.add('pokemon-types');
+  let pokemonTypes = document.createElement('p');
+  pokemonTypes.classList.add('pokemon-types');
 
-    let pokemonAbilities = document.createElement('p');
-    pokemonTypes.classList.add('pokemon-Abilities');*/
+  let pokemonAbilities = document.createElement('p');
+  pokemonTypes.classList.add('pokemon-Abilities');
 
   let modalBody = $('.modal-body');
   let modalTitle = $('.modal-title');
@@ -39,11 +38,11 @@ let pokemonRepository = (function() {
 
   modalTitle.append(pokemonName);
   modalBody.append(pokemonImgFront);
-  //modalBody.append(pokemonImgBack);
+  modalBody.append(pokemonImgBack);
   modalBody.append(pokemonHeight);
-  //modalBody.append(pokemonWeight);
-  // modalBody.append(pokemonTypes);
-  //modalBody.append(pokemonAbilities);
+  modalBody.append(pokemonWeight);
+  modalBody.append(pokemonTypes);
+  modalBody.append(pokemonAbilities);
 
   let pokemonList = [];
 
@@ -100,15 +99,15 @@ let pokemonRepository = (function() {
 
     pokemonHeight.innerText = 'Height: ' + pokemon.height;
 
-    pokemonImgFront.src = pokemon.imageUrl;
+    pokemonImgFront.src = pokemon.imageUrlFront;
 
-    /*pokemonImgBack.src = pokemon.imageUrlBack;
+    pokemonImgBack.src = pokemon.imageUrlBack;
 
     pokemonWeight.innerText = 'Weight: ' + pokemon.weight;
 
     pokemonTypes.innerText = 'Types: ' + pokemon.types;
 
-    pokemonAbilities.innerText = 'Abilities: ' + pokemon.abilities;*/
+    pokemonAbilities.innerText = 'Abilities: ' + pokemon.abilities;
 
     let modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
@@ -177,13 +176,17 @@ let pokemonRepository = (function() {
         return response.json();
       })
       .then(function(details) {
-        // Now we add the details to the item
-        item.imageUrl = details.sprites.front_default;
+        item.imageUrlFront = details.sprites.front_default;
+        item.imageUrlBack = details.sprites.back_default;
         item.height = details.height;
-        item.types = details.types;
-        pokemon.height = details.height;
-        pokemon.weight = details.weight;
-        pokemon.types = details.types;
+        item.weight = details.weight;
+
+        item.types = details.types.map(function(x) {
+          return x.type.name;
+        });
+        item.abilities = details.abilities.map(function(x) {
+          return x.ability.name;
+        });
       })
       .catch(function(e) {
         console.error(e);
