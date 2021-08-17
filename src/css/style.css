@@ -47,6 +47,12 @@ ul {
   column-gap: 20px;
 }
 
+@media (max-width: 768px) {
+  .pokemon-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 #modal-container {
   display: none;
 }
