@@ -1,31 +1,30 @@
-<h1 align="center"><my-pokedex-app></h1>
+# My Pokedex App
 
-<p align="center"><project-description></p>
+## Project Description
+
+The app is built using Javascript to display a list of Pokemon characters and their corresponding information. The app is connected to an external API from which the pokemom information is sourced. Javascript and CSS libraries where also included with the help of Bootstrap. 
 
 ## Links
+
+```bash
 
 - [Repo](https://github.com/Cocoflosbach/my-pokedex-app> "<my-pokedex-app> Repo")
 
 - [Live](<https://cocoflosbach.github.io/my-pokedex-app/> "Live View")
 
 - [API](<https://pokeapi.co/api/v2/pokemon/?limit=150> "API")
-
-## Screenshots
-
-![Home Page](/screenshots/1.png "Home Page")
-
-![](/screenshots/2.png)
-
-![](/screenshots/3.png)
+```
 
 ## Built With
 
+```bash
 - JavaScript
 - HTML
 - CSS
 - JQuery
 - Bootstrap
 - Popper
+```
 
 ## Author
 
