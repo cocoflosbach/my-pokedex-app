@@ -81,9 +81,9 @@ const pokemonRepository = (function() {
     button.setAttribute('data-target', '#modal-container');
     button.setAttribute('data-toggle', 'modal');
 
-    button.addEventListener('click', function(showDetails) {
-      console.log(pokemon);
-    });
+    // // Add event listener to button
+    // button.addEventListener('click', function(showDetails) {
+    //   console.log(pokemon);
     // });
 
     listItem.appendChild(button);
