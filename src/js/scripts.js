@@ -1,32 +1,32 @@
-let pokemonRepository = (function() {
+const pokemonRepository = (function() {
   // define modal variable
-  let pokedexPokemonList = document.querySelector('.pokemon-list');
-  let modalContainer = document.querySelector('#modal-container');
-  let modal = document.querySelector('.modal');
-  let modalClose = document.querySelector('.modal-close');
-  let searchInput = document.querySelector('#search-bar');
+  const pokedexPokemonList = document.querySelector('.pokemon-list');
+  const modalContainer = document.querySelector('#modal-container');
+  const modal = document.querySelector('.modal');
+  const modalClose = document.querySelector('.modal-close');
+  const searchInput = document.querySelector('#search-bar');
   //let searchButton = document.querySelector('.search-button')
 
   // Create Modal content
-  let pokemonName = document.createElement('h1');
+  const pokemonName = document.createElement('h1');
   pokemonName.classList.add('pokemon-name');
 
-  let pokemonHeight = document.createElement('p');
+  const pokemonHeight = document.createElement('p');
   pokemonHeight.classList.add('pokemon-height');
 
-  let pokemonImgFront = document.createElement('img');
+  const pokemonImgFront = document.createElement('img');
   pokemonImgFront.classList.add('modal-img');
 
-  let pokemonImgBack = document.createElement('img');
+  const pokemonImgBack = document.createElement('img');
   pokemonImgBack.classList.add('modal-img');
 
-  let pokemonWeight = document.createElement('p');
+  const pokemonWeight = document.createElement('p');
   pokemonWeight.classList.add('pokemon-weight');
 
-  let pokemonTypes = document.createElement('p');
+  const pokemonTypes = document.createElement('p');
   pokemonTypes.classList.add('pokemon-types');
 
-  let pokemonAbilities = document.createElement('p');
+  const pokemonAbilities = document.createElement('p');
   pokemonTypes.classList.add('pokemon-Abilities');
 
   let modalBody = $('.modal-body');
@@ -44,7 +44,7 @@ let pokemonRepository = (function() {
   modalBody.append(pokemonTypes);
   modalBody.append(pokemonAbilities);
 
-  let pokemonList = [];
+  const pokemonList = [];
 
   // Link to pokemon API
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
@@ -81,10 +81,10 @@ let pokemonRepository = (function() {
     button.setAttribute('data-target', '#modal-container');
     button.setAttribute('data-toggle', 'modal');
 
-    // Add event listener to button
     button.addEventListener('click', function(showDetails) {
       console.log(pokemon);
     });
+    // });
 
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
@@ -109,7 +109,7 @@ let pokemonRepository = (function() {
 
     pokemonAbilities.innerText = 'Abilities: ' + pokemon.abilities;
 
-    let modalContainer = document.querySelector('#modal-container');
+    const modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.add('is-visible');
 
     modalContainer.classList.add('is-visible');
@@ -118,7 +118,7 @@ let pokemonRepository = (function() {
   //Create hideModal function
 
   function hideModal() {
-    let modalContainer = document.querySelector('#modal-container');
+    const modalContainer = document.querySelector('#modal-container');
     modalContainer.classList.remove('is-visible');
   }
 
@@ -126,7 +126,7 @@ let pokemonRepository = (function() {
 
   // Hide using escape key
   window.addEventListener('keydown', e => {
-    let modalContainer = document.querySelector('#modal-container');
+    const modalContainer = document.querySelector('#modal-container');
     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
       hideModal();
     }
@@ -155,7 +155,7 @@ let pokemonRepository = (function() {
       })
       .then(function(json) {
         json.results.forEach(function(item) {
-          let pokemon = {
+          const pokemon = {
             name: item.name.toUpperCase(),
             detailsUrl: item.url
           };
@@ -194,7 +194,7 @@ let pokemonRepository = (function() {
   }
 
   searchInput.addEventListener('input', function() {
-    let listPokemonItem = document.querySelectorAll('li');
+    const listPokemonItem = document.querySelectorAll('li');
     let value = searchInput.value.toUpperCase();
 
     listPokemonItem.forEach(function(pokemon) {
