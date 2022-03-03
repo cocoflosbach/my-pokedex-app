@@ -15,7 +15,7 @@ The app is built using Javascript to display a list of Pokemon characters and th
 
 - [Repo](https://github.com/Cocoflosbach/my-pokedex-app> "<my-pokedex-app> Repo")
 
-- [Live](<https://cocoflosbach.github.io/my-pokedex-app/> "Live View")
+- [Live website](<https://cocoflosbach.github.io/my-pokedex-app/> "Live View")
 
 - [API](<https://pokeapi.co/api/v2/pokemon/?limit=150> "API")
 
